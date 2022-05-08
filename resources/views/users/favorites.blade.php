@@ -17,7 +17,7 @@
     //
     <p>{!!$user!!}</p>
     //
-    @foreach ($microposts as $favorite)
+    @foreach ($favorites as $favorite)
         <p>{!!$favorite!!}</p>
            
 
