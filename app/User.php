@@ -132,7 +132,12 @@ class User extends Authenticatable
     
     public function my_favorite_content()
     {
-        return $this->belongsToMany(User::class, 'favorites', 'user_id', 'micropost_id')->withTimestamps();
+        return $this->belongsToMany(Micropost::class, 'favorites', 'user_id', 'micropost_id')->withTimestamps();
+    }
+    
+    public function favoring_users()
+    {
+        return $this->belongsToMany(Micropost::class, 'favorites', 'micropost_id','user_id')->withTimestamps();
     }
     
     public function register_favorite($micropost_id)
@@ -164,6 +169,7 @@ class User extends Authenticatable
     
     public function is_favorite($micropost_id)
     {
+        
         // フォロー中ユーザの中に $userIdのものが存在するか
         return $this->my_favorite_content()->where('micropost_id', $micropost_id)->exists();
     }

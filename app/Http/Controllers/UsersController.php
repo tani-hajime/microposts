@@ -90,11 +90,15 @@ class UsersController extends Controller
 
         // ユーザのフォロー一覧を取得
         $favorites = $user->my_favorite_content()->paginate(10);
+    
+        $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
+        
 
         // フォロー一覧ビューでそれらを表示
         return view('users.favorites', [
             'user' => $user,
             'favorites' => $favorites,
+            'microposts' => $microposts
         ]);
     }
 }

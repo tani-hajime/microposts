@@ -18,10 +18,18 @@
     <p>{!!$user!!}</p>
     //
     @foreach ($favorites as $favorite)
-        <p>{!!$favorite!!}</p>
-           
+    @foreach ($microposts as $micropost)
+        
+        @if($micropost->id == $favorite->pivot->micropost_id)
+        <p>{!!$micropost->content!!}</p>
+          @endif
 
-        @endforeach
+    @endforeach
+       
+
+    @endforeach
+    //
+    
         
         </div>
         
