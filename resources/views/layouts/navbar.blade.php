@@ -19,6 +19,9 @@
                             {{-- ユーザ詳細ページへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('users.show', 'My profile', ['user' => Auth::id()]) !!}</li>
                             <li class="dropdown-divider"></li>
+                            {{--お気に入りのリンク--}}
+                            <li class="dropdown-item">{!! link_to_route('users.my_favorite_content', 'お気に入り',['id' => Auth::id()]) !!}</li>
+                             
                             {{-- ログアウトへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
                         </ul>

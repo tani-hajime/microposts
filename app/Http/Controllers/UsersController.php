@@ -88,7 +88,6 @@ class UsersController extends Controller
         // 関係するモデルの件数をロード
         $user->loadRelationshipCounts();
 
-        // ユーザのフォロー一覧を取得
         $favorites = $user->my_favorite_content()->paginate(10);
     
         $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);

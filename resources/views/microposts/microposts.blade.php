@@ -12,7 +12,7 @@
                     </div>
                     <div>
                         {{-- 投稿内容 --}}
-                        <p>micropost_id = {!!$micropost->id!!}</p>
+                     
                         <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                     </div>
                     <div>
