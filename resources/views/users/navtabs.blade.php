@@ -24,7 +24,7 @@
     {{-- お気に入り一覧タブ --}}
     <li class="nav-item">
         <a href="{{ route('users.my_favorite_content', ['id' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.my_favorite_content') ? 'active' : '' }}">
-            お気に入り
+            favorites
             <span class="badge badge-secondary">{{ $user->my_favorite_content_count }}</span>
         </a>
     </li>
